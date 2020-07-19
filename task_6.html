@@ -1,0 +1,32 @@
+<meta charset = "utf-8">
+<script>
+        function numSum(a, b) {
+            return (a + b);
+        }
+        function numSub(a, b) {
+            return (a - b);
+        }
+        function numDiv(a, b) {
+            return (a / b);
+        }
+        function numMul(a, b) {
+            return (a * b);
+        }
+        function mathOperation(arg1, arg2, operation) {
+            switch(operation) {
+                case '+':
+                alert('Сумма: ' + numSum(arg1, arg2));
+                break;
+                case '-':
+                alert('Разность: ' + numSub(arg1, arg2));
+                break;
+                case '/':
+                alert('Частное: ' + numDiv(arg1, arg2));
+                break;
+                case '*':
+                alert('Произведение: ' + numMul(arg1, arg2));
+                break;
+            }
+        }
+        mathOperation(1, 2,'/');
+</script>
