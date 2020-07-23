@@ -1,0 +1,18 @@
+<meta charset = "utf-8">
+    <script>
+    let basketPrice = 0;
+        basket = [{name:'Товар1', price:10}, {name:'Товар2', price:20}];
+        basket.push({name:'Товар3', price:30}, {name:'Товар4', price:40});
+            function countBasketPrice(x) {
+                for (i = 0; i < basket.length; i++) { 
+                basketPrice = basketPrice + basket[i].price;
+             }
+                return basketPrice;
+            }
+            console.log('Вы добавили в корзину:');
+                for (i = 0; i < basket.length; i++)
+                {
+                    console.log(basket[i].name + ': ' + basket[i].price + ' рублей \n');
+                }
+                console.log('Итого: '+countBasketPrice(basket) + ' ');
+    </script>

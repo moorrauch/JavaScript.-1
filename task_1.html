@@ -1,0 +1,19 @@
+<meta charset = "utf-8">
+    <script>
+        let minNum= 1;
+        let maxNum = 100;
+        let result = '';
+            while(result < 100) {
+                for(i = minNum; i < maxNum; i++) {
+                    for(j = 2; j < i; j++) {
+                        if(i % j == 0) {
+                            break;
+                        }
+                        if (i == j + 1) {
+                            result += i + '\n';
+                        }
+                    }
+                }
+            }
+            alert(result);
+    </script>
