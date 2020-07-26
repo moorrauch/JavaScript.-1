@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+<script>
+    let maxNum = 999;
+    let numeral = Math.floor(prompt('Введите число от 0 до 999'), 10)
+    if (numeral >= 0) {
+        let number = {
+            numeral: numeral,
+            units: 0,
+            tens: 0,
+            hundreds: 0,
+        };
+        if (number.numeral <= 9) {
+            number.units = number.numeral;
+        } else if (number.numeral <= 999) {
+            number.units = Math.floor(number.numeral % 10);
+            number.tens = Math.floor(number.numeral / 10 % 10);
+            number.hundreds = Math.floor(number.numeral / 100 % 10);
+        } else {
+            number = {};
+            console.log('Вы ввели число, которое превышает 999');
+        }
+        console.log(number);
+    }
+</script>
