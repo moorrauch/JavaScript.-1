@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <style>
+        body {
+            background: rgb(253, 226, 255);
+            background: linear-gradient(90deg, rgba(253, 226, 255, 0.14049369747899154) 0%, rgba(255, 255, 255, 0.025647759103641476) 50%, rgba(245, 146, 255, 0.07886904761904767) 100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div_1" class="d-flex justify-content-center display-4 text-danger"> Корзина пуста </div>
+    <br>
+    <script>
+        let Basket = function () {
+            this.name = [];
+            this.price = [];
+            this.basketPrice = 0;
+        };
+        Basket.prototype.countedBasketPrice = function () {
+            return this.basketPrice;
+        }
+        Basket.prototype.insert = function (name, price) {
+            this.price.push(price);
+            this.name.push(name);
+            this.basketPrice = this.basketPrice + price;
+        }
+        Basket.prototype.showItems = function () {
+            var counter = 0;
+            var summ = 0;
+            for (i = 0; i < this.price.length; i++) {
+                counter++;
+                summ += this.price[i];
+            }
+            return 'В корзине: ' + counter + ' товаров на сумму ' + summ + ' рублей'
+        }
+        let basket1 = new Basket();
+        function refresh(name, price) {
+            basket1.insert(name, price);
+            var my_div = document.getElementById("div_1");
+            my_div.innerHTML = basket1.showItems();
+            if (my_div.classList.contains('text-danger')) {
+                my_div.classList.remove('text-danger');
+                my_div.classList.toggle('text-success');
+                my_div.classList.toggle('border');
+                ;
+            }
+
+        }
+
+    </script>
+    <div class="item_box">
+        <h3 class="display-4">Мороженое</h3>
+        <p class="text-monospace">Цена: <span class="item_price">20</span>$</p>
+        <button class="btn btn-success" onclick=refresh('Мороженое',20)>Добавить в корзину</button>
+    </div>
+    <div class="item_box">
+        <h1 class="display-4">Пироженое</h1>
+        <p class="text-monospace">Цена: <span class="item_price">100</span>$</p>
+        <button type="button" class="btn btn-success" onclick=refresh('Пироженое',100)>Добавить в корзину</button>
+    </div>
+    <div class="item_box">
+        <h3 class="display-4">Виноград</h3>
+        <p class="text-monospace">Цена: <span class="item_price">1000</span>$</p>
+        <button class="btn btn-success" onclick=refresh('Виноград',1000)>Добавить в корзину</button>
+    </div>
+</body>
+
+</html>
