@@ -1,0 +1,38 @@
+<meta charset="utf  -8">
+<div id="div_1"></div>
+<script>
+    let Basket = function () {
+        this.name = [];
+        this.price = [];
+        this.basketPrice = 0;
+    };
+    Basket.prototype.countedBasketPrice = function () {
+        return this.basketPrice;
+    }
+    Basket.prototype.insert = function (name, price) {
+        this.price.push(price);
+        this.name.push(name);
+        this.basketPrice = this.basketPrice + price;
+    }
+    Basket.prototype.showItems = function () {
+        var counter = 0;
+        var summ = 0;
+        for (i = 0; i < this.price.length; i++) {
+            counter++;
+            summ += this.price[i];
+        }
+        return 'В корзине: ' + counter + ' товаров на сумму ' + summ + ' рублей'
+    }
+    let basket1 = new Basket();
+    var newDiv = document.createElement("div");
+    if (basket1.name.length != 0) {
+        newDiv.innerHTML = basket1.showItems();
+    }
+    else {
+        newDiv.innerHTML = 'Корзина пуста';
+    }
+
+    my_div = document.getElementById("div_1");
+    my_div.appendChild(newDiv);
+
+</script>

@@ -1,0 +1,51 @@
+<meta charset="utf-8">
+<div id="Chess">
+</div>
+<script>
+
+    var Chess = document.getElementById('Chess')
+    var newTable = document.createElement('table'),
+        letters = ['', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', ''];
+    newTable.style.borderCollapse = 'collapse';
+    newTable.style.textAlign = 'center';
+    for (var i = 0, a = 9; i < 10, a >= 0; i++, a--) {
+        var newTr = newTable.insertRow(i);
+        for (var j = 0; j < 10; j++) {
+            var newTd = newTr.insertCell(j);
+            newTd.style.width = '30px';
+            newTd.style.height = '30px';
+            if (i !== 0 && i !== 9 && j !== 0 && j !== 9) {
+                newTd.style.border = '1px solid black';
+                newTd.style.textAlign = 'center';
+                if (i % 2 == 0) {
+                    if (j % 2 == 0 || a % 2 == 0) {
+                        newTd.style.backgroundColor = 'white';
+                    } else {
+                        newTd.style.backgroundColor = 'black';
+                    }
+                } else {
+                    if (j % 2 != 0 || a % 2 != 0) {
+                        newTd.style.backgroundColor = 'white';
+                    } else {
+                        newTd.style.backgroundColor = 'black';
+                    }
+                }
+            };
+            switch (i) {
+                case 0:
+                    newTd.innerText = letters[j];
+                    break;
+                case 9:
+                    newTd.innerText = letters[j];
+                    break;
+                default:
+                    if (j === 0 || j === 9) {
+                        newTd.innerHTML = a;
+                    }
+                    break;
+            }
+        }
+    }
+    document.body.appendChild(newTable);
+
+</script>
