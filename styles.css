@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header {
+    background: url('https://images.unsplash.com/photo-1498354136128-58f790194fa7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80');
+    color: rgb(255, 255, 255);
+    font-size: 45px;
+    padding: 40px;
+    height: auto;
+}
+
+main {
+    background-color: ghostwhite;
+}
+
+h1 {
+    color: rgb(0,90,141);
+    font-size: 45px;
+    padding: 10px;
+    height: auto; 
+}
+
+footer {
+    color: rgb(0,90,141);
+    background-color: rgb(188,209,218);
+    position: absolute;
+    flex: auto;
+    width: 100%;
+    height: 20px;
+    font-size: 10px;
+}
+
+.products-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 100%;
+    color: rgb(0,90,141);
+}
+
+.button {
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+    float: right;
+}
+
+.basket_list.shown {
+    display: block;
+    color: rgb(0,90,141);
+    font-size: 25px;
+    padding: 20px;
+    height: auto;
+  }
+
+
+.basket_list {
+    display: none;
+}
+
+.anyProduct {
+    padding: 5px;
+}
